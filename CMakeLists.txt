@@ -3,7 +3,15 @@ project(snakes)
 set(CMAKE_C_FLAGS "--std=c2x")
 set(CMAKE_C_COMPILER "/usr/bin/clang")
 
-file(GLOB SourceFiles src/*.c)
+set(SourceFiles
+    src/main.c
+    src/game.c
+    src/gameover.c
+    src/init.c
+    src/state.c
+    src/textures.c
+    src/title.c
+)
 
 find_package(SDL2 REQUIRED)
 find_package(SDL2_ttf REQUIRED)

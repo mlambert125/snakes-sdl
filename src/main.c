@@ -6,7 +6,7 @@
 #include "../includes/state.h"
 #include "../includes/textures.h"
 
-#define FPS 10
+#define FPS 15
 
 int main() {
     GameState gameState;
