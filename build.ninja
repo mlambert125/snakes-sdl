@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: sdltest
+# Project: snakes
 # Configurations: 
 # =============================================================================
 
@@ -36,79 +36,79 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /home/mikel/projects/sdl/
 # =============================================================================
-# Object build statements for EXECUTABLE target sdltest
+# Object build statements for EXECUTABLE target snakes
 
 
 #############################################
-# Order-only phony target for sdltest
+# Order-only phony target for snakes
 
-build cmake_object_order_depends_target_sdltest: phony || CMakeFiles/sdltest.dir
+build cmake_object_order_depends_target_snakes: phony || CMakeFiles/snakes.dir
 
-build CMakeFiles/sdltest.dir/src/game.c.o: C_COMPILER__sdltest_unscanned_ /home/mikel/projects/sdl/src/game.c || cmake_object_order_depends_target_sdltest
-  DEP_FILE = CMakeFiles/sdltest.dir/src/game.c.o.d
+build CMakeFiles/snakes.dir/src/game.c.o: C_COMPILER__snakes_unscanned_ /home/mikel/projects/sdl/src/game.c || cmake_object_order_depends_target_snakes
+  DEP_FILE = CMakeFiles/snakes.dir/src/game.c.o.d
   FLAGS = --std=c2x
   INCLUDES = -isystem /usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/sdltest.dir
-  OBJECT_FILE_DIR = CMakeFiles/sdltest.dir/src
+  OBJECT_DIR = CMakeFiles/snakes.dir
+  OBJECT_FILE_DIR = CMakeFiles/snakes.dir/src
 
-build CMakeFiles/sdltest.dir/src/gameover.c.o: C_COMPILER__sdltest_unscanned_ /home/mikel/projects/sdl/src/gameover.c || cmake_object_order_depends_target_sdltest
-  DEP_FILE = CMakeFiles/sdltest.dir/src/gameover.c.o.d
+build CMakeFiles/snakes.dir/src/gameover.c.o: C_COMPILER__snakes_unscanned_ /home/mikel/projects/sdl/src/gameover.c || cmake_object_order_depends_target_snakes
+  DEP_FILE = CMakeFiles/snakes.dir/src/gameover.c.o.d
   FLAGS = --std=c2x
   INCLUDES = -isystem /usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/sdltest.dir
-  OBJECT_FILE_DIR = CMakeFiles/sdltest.dir/src
+  OBJECT_DIR = CMakeFiles/snakes.dir
+  OBJECT_FILE_DIR = CMakeFiles/snakes.dir/src
 
-build CMakeFiles/sdltest.dir/src/init.c.o: C_COMPILER__sdltest_unscanned_ /home/mikel/projects/sdl/src/init.c || cmake_object_order_depends_target_sdltest
-  DEP_FILE = CMakeFiles/sdltest.dir/src/init.c.o.d
+build CMakeFiles/snakes.dir/src/init.c.o: C_COMPILER__snakes_unscanned_ /home/mikel/projects/sdl/src/init.c || cmake_object_order_depends_target_snakes
+  DEP_FILE = CMakeFiles/snakes.dir/src/init.c.o.d
   FLAGS = --std=c2x
   INCLUDES = -isystem /usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/sdltest.dir
-  OBJECT_FILE_DIR = CMakeFiles/sdltest.dir/src
+  OBJECT_DIR = CMakeFiles/snakes.dir
+  OBJECT_FILE_DIR = CMakeFiles/snakes.dir/src
 
-build CMakeFiles/sdltest.dir/src/main.c.o: C_COMPILER__sdltest_unscanned_ /home/mikel/projects/sdl/src/main.c || cmake_object_order_depends_target_sdltest
-  DEP_FILE = CMakeFiles/sdltest.dir/src/main.c.o.d
+build CMakeFiles/snakes.dir/src/main.c.o: C_COMPILER__snakes_unscanned_ /home/mikel/projects/sdl/src/main.c || cmake_object_order_depends_target_snakes
+  DEP_FILE = CMakeFiles/snakes.dir/src/main.c.o.d
   FLAGS = --std=c2x
   INCLUDES = -isystem /usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/sdltest.dir
-  OBJECT_FILE_DIR = CMakeFiles/sdltest.dir/src
+  OBJECT_DIR = CMakeFiles/snakes.dir
+  OBJECT_FILE_DIR = CMakeFiles/snakes.dir/src
 
-build CMakeFiles/sdltest.dir/src/state.c.o: C_COMPILER__sdltest_unscanned_ /home/mikel/projects/sdl/src/state.c || cmake_object_order_depends_target_sdltest
-  DEP_FILE = CMakeFiles/sdltest.dir/src/state.c.o.d
+build CMakeFiles/snakes.dir/src/state.c.o: C_COMPILER__snakes_unscanned_ /home/mikel/projects/sdl/src/state.c || cmake_object_order_depends_target_snakes
+  DEP_FILE = CMakeFiles/snakes.dir/src/state.c.o.d
   FLAGS = --std=c2x
   INCLUDES = -isystem /usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/sdltest.dir
-  OBJECT_FILE_DIR = CMakeFiles/sdltest.dir/src
+  OBJECT_DIR = CMakeFiles/snakes.dir
+  OBJECT_FILE_DIR = CMakeFiles/snakes.dir/src
 
-build CMakeFiles/sdltest.dir/src/textures.c.o: C_COMPILER__sdltest_unscanned_ /home/mikel/projects/sdl/src/textures.c || cmake_object_order_depends_target_sdltest
-  DEP_FILE = CMakeFiles/sdltest.dir/src/textures.c.o.d
+build CMakeFiles/snakes.dir/src/textures.c.o: C_COMPILER__snakes_unscanned_ /home/mikel/projects/sdl/src/textures.c || cmake_object_order_depends_target_snakes
+  DEP_FILE = CMakeFiles/snakes.dir/src/textures.c.o.d
   FLAGS = --std=c2x
   INCLUDES = -isystem /usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/sdltest.dir
-  OBJECT_FILE_DIR = CMakeFiles/sdltest.dir/src
+  OBJECT_DIR = CMakeFiles/snakes.dir
+  OBJECT_FILE_DIR = CMakeFiles/snakes.dir/src
 
-build CMakeFiles/sdltest.dir/src/title.c.o: C_COMPILER__sdltest_unscanned_ /home/mikel/projects/sdl/src/title.c || cmake_object_order_depends_target_sdltest
-  DEP_FILE = CMakeFiles/sdltest.dir/src/title.c.o.d
+build CMakeFiles/snakes.dir/src/title.c.o: C_COMPILER__snakes_unscanned_ /home/mikel/projects/sdl/src/title.c || cmake_object_order_depends_target_snakes
+  DEP_FILE = CMakeFiles/snakes.dir/src/title.c.o.d
   FLAGS = --std=c2x
   INCLUDES = -isystem /usr/include/SDL2
-  OBJECT_DIR = CMakeFiles/sdltest.dir
-  OBJECT_FILE_DIR = CMakeFiles/sdltest.dir/src
+  OBJECT_DIR = CMakeFiles/snakes.dir
+  OBJECT_FILE_DIR = CMakeFiles/snakes.dir/src
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target sdltest
+# Link build statements for EXECUTABLE target snakes
 
 
 #############################################
-# Link the executable bin/sdltest
+# Link the executable bin/snakes
 
-build bin/sdltest: C_EXECUTABLE_LINKER__sdltest_ CMakeFiles/sdltest.dir/src/game.c.o CMakeFiles/sdltest.dir/src/gameover.c.o CMakeFiles/sdltest.dir/src/init.c.o CMakeFiles/sdltest.dir/src/main.c.o CMakeFiles/sdltest.dir/src/state.c.o CMakeFiles/sdltest.dir/src/textures.c.o CMakeFiles/sdltest.dir/src/title.c.o | /usr/lib/x86_64-linux-gnu/libSDL2.so
+build bin/snakes: C_EXECUTABLE_LINKER__snakes_ CMakeFiles/snakes.dir/src/game.c.o CMakeFiles/snakes.dir/src/gameover.c.o CMakeFiles/snakes.dir/src/init.c.o CMakeFiles/snakes.dir/src/main.c.o CMakeFiles/snakes.dir/src/state.c.o CMakeFiles/snakes.dir/src/textures.c.o CMakeFiles/snakes.dir/src/title.c.o | /usr/lib/x86_64-linux-gnu/libSDL2.so
   FLAGS = --std=c2x
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libSDL2.so  -lSDL2_ttf
-  OBJECT_DIR = CMakeFiles/sdltest.dir
+  OBJECT_DIR = CMakeFiles/snakes.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = bin/sdltest
-  TARGET_PDB = sdltest.dbg
+  TARGET_FILE = bin/snakes
+  TARGET_PDB = snakes.dbg
 
 
 #############################################
@@ -136,7 +136,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build sdltest: phony bin/sdltest
+build snakes: phony bin/snakes
 
 # =============================================================================
 # Folder targets.
@@ -146,7 +146,7 @@ build sdltest: phony bin/sdltest
 #############################################
 # Folder: /home/mikel/projects/sdl
 
-build all: phony bin/sdltest
+build all: phony bin/snakes
 
 # =============================================================================
 # Built-in targets
