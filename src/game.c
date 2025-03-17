@@ -89,11 +89,11 @@ Scene sceneGame(GameState *state, SDL_Window *window, SDL_Renderer *renderer, SD
         state->score += 1;
         resetAppleLocation(state);
         state->snakeLength += 1;
-        state->snakeBodySegmentLocations[state->snakeLength - 1] =
-            state->snakeBodySegmentLocations[state->snakeLength - 2];
         if (state->snakeLength > MAX_SNAKE_LENGTH) {
             state->snakeLength = MAX_SNAKE_LENGTH;
         }
+        state->snakeBodySegmentLocations[state->snakeLength - 1] =
+            state->snakeBodySegmentLocations[state->snakeLength - 2];
         updateScoreTexture(state, renderer);
     }
 
