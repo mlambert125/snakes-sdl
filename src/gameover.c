@@ -12,6 +12,8 @@ Scene sceneGameOver(GameState *state, SDL_Window *window, SDL_Renderer *renderer
             case SDLK_ESCAPE:
             case SDLK_q:
                 return (Scene){true, nullptr};
+            case SDLK_RETURN:
+                return (Scene){false, sceneTitleScreen};
             }
         }
     }
