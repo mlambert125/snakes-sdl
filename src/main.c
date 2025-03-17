@@ -10,8 +10,8 @@
 
 int main() {
     GameState gameState;
-    SDL_Window *window = NULL;
-    SDL_Renderer *renderer = NULL;
+    SDL_Window *window = nullptr;
+    SDL_Renderer *renderer = nullptr;
     Scene currentScene = {false, sceneTitleScreen};
 
     if (!initSdl(&window, &renderer)) {

@@ -11,28 +11,28 @@ Scene sceneGame(GameState *state, SDL_Window *window, SDL_Renderer *renderer,
     SDL_RenderClear(renderer);
 
     for (int i = 0; i < MAX_X; i++) {
-        SDL_RenderCopy(renderer, wall, NULL, &(SDL_Rect){i * 20, 0, 20, 20});
-        SDL_RenderCopy(renderer, wall, NULL,
+        SDL_RenderCopy(renderer, wall, nullptr, &(SDL_Rect){i * 20, 0, 20, 20});
+        SDL_RenderCopy(renderer, wall, nullptr,
                        &(SDL_Rect){i * 20, (MAX_Y - 1) * 20, 20, 20});
     }
     for (int i = 0; i < MAX_Y; i++) {
-        SDL_RenderCopy(renderer, wall, NULL, &(SDL_Rect){0, i * 20, 20, 20});
-        SDL_RenderCopy(renderer, wall, NULL,
+        SDL_RenderCopy(renderer, wall, nullptr, &(SDL_Rect){0, i * 20, 20, 20});
+        SDL_RenderCopy(renderer, wall, nullptr,
                        &(SDL_Rect){(MAX_X - 1) * 20, i * 20, 20, 20});
     }
 
     for (int i = 0; i < state->snakeLength; i++) {
-        SDL_RenderCopy(renderer, snakeSquare, NULL,
+        SDL_RenderCopy(renderer, snakeSquare, nullptr,
                        &(SDL_Rect){state->snakeBodySegmentLocations[i].x * 20,
                                    state->snakeBodySegmentLocations[i].y * 20,
                                    20, 20});
     }
-    SDL_RenderCopy(renderer, apple, NULL,
+    SDL_RenderCopy(renderer, apple, nullptr,
                    &(SDL_Rect){state->appleLocation.x * 20,
                                state->appleLocation.y * 20, 20, 20});
 
-    SDL_RenderCopy(renderer, scoreText, NULL, &(SDL_Rect){150, 0, 100, 30});
-    SDL_RenderCopy(renderer, livesText, NULL, &(SDL_Rect){300, 0, 100, 30});
+    SDL_RenderCopy(renderer, scoreText, nullptr, &(SDL_Rect){150, 0, 100, 30});
+    SDL_RenderCopy(renderer, livesText, nullptr, &(SDL_Rect){300, 0, 100, 30});
 
     SDL_Event e;
     while (SDL_PollEvent(&e) != 0) {
@@ -40,7 +40,7 @@ Scene sceneGame(GameState *state, SDL_Window *window, SDL_Renderer *renderer,
             switch (e.key.keysym.sym) {
             case SDLK_ESCAPE:
             case SDLK_q:
-                return (Scene){true, NULL};
+                return (Scene){true, nullptr};
             case SDLK_LEFT:
             case SDLK_a:
                 if (state->snakeDirection != RIGHT)

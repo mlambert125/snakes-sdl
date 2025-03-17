@@ -3,60 +3,60 @@
 #include "../includes/textures.h"
 #include "../includes/state.h"
 
-SDL_Texture* title = NULL;
-SDL_Texture* gameOver = NULL;
-SDL_Texture* snakeSquare = NULL;
-SDL_Texture* scoreText = NULL;
-SDL_Texture* livesText = NULL;
-SDL_Texture* wall = NULL;
-SDL_Texture* apple = NULL;
+SDL_Texture* title = nullptr;
+SDL_Texture* gameOver = nullptr;
+SDL_Texture* snakeSquare = nullptr;
+SDL_Texture* scoreText = nullptr;
+SDL_Texture* livesText = nullptr;
+SDL_Texture* wall = nullptr;
+SDL_Texture* apple = nullptr;
 
 bool loadTextures(SDL_Renderer *renderer) {
-    if (title == NULL) {
+    if (title == nullptr) {
         SDL_Surface *surface = SDL_LoadBMP("resources/title.bmp");
-        if (surface == NULL) {
+        if (surface == nullptr) {
             fprintf(stderr, "Failed to load title texture: %s\n", SDL_GetError());
             return false;
         }
         title = SDL_CreateTextureFromSurface(renderer, surface);
         SDL_FreeSurface(surface);
     }
-    if (gameOver == NULL) {
+    if (gameOver == nullptr) {
         SDL_Surface *surface = SDL_LoadBMP("resources/gameover.bmp");
-        if (surface == NULL) {
+        if (surface == nullptr) {
             fprintf(stderr, "Failed to load game over texture: %s\n", SDL_GetError());
             return false;
         }
         gameOver = SDL_CreateTextureFromSurface(renderer, surface);
         SDL_FreeSurface(surface);
     }
-    if (snakeSquare == NULL) {
+    if (snakeSquare == nullptr) {
         SDL_Surface *surface = SDL_CreateRGBSurface(0, 20, 20, 32, 0, 0, 0, 0);
-        SDL_FillRect(surface, NULL, SDL_MapRGB(surface->format, 0x00, 0xFF, 0x00));
+        SDL_FillRect(surface, nullptr, SDL_MapRGB(surface->format, 0x00, 0xFF, 0x00));
         snakeSquare = SDL_CreateTextureFromSurface(renderer, surface);
         SDL_FreeSurface(surface);
     }
-    if (wall == NULL) {
+    if (wall == nullptr) {
         SDL_Surface *surface = SDL_LoadBMP("resources/wall.bmp");
-        if (surface == NULL) {
+        if (surface == nullptr) {
             fprintf(stderr, "Failed to load wall texture: %s\n", SDL_GetError());
             return false;
         }
         wall = SDL_CreateTextureFromSurface(renderer, surface);
         SDL_FreeSurface(surface);
     }
-    if (apple == NULL) {
+    if (apple == nullptr) {
         SDL_Surface *surface = SDL_LoadBMP("resources/apple.bmp");
-        if (surface == NULL) {
+        if (surface == nullptr) {
             fprintf(stderr, "Failed to load apple texture: %s\n", SDL_GetError());
             return false;
         }
         apple = SDL_CreateTextureFromSurface(renderer, surface);
         SDL_FreeSurface(surface);
     }
-    if (scoreText == NULL) {
+    if (scoreText == nullptr) {
         TTF_Font *font = TTF_OpenFont("resources/DejaVuSans.ttf", 12);
-        if (font == NULL) {
+        if (font == nullptr) {
             fprintf(stderr, "Failed to load font: %s\n", TTF_GetError());
             return false;
         }
@@ -66,9 +66,9 @@ bool loadTextures(SDL_Renderer *renderer) {
         SDL_FreeSurface(surface);
         TTF_CloseFont(font);
     }
-    if (livesText == NULL) {
+    if (livesText == nullptr) {
         TTF_Font *font = TTF_OpenFont("resources/DejaVuSans.ttf", 36);
-        if (font == NULL) {
+        if (font == nullptr) {
             fprintf(stderr, "Failed to load font: %s\n", TTF_GetError());
             return false;
         }
@@ -82,12 +82,12 @@ bool loadTextures(SDL_Renderer *renderer) {
 }
 
 bool updateScoreTexture(GameState *state, SDL_Renderer *renderer) {
-    if (scoreText != NULL) {
+    if (scoreText != nullptr) {
         SDL_DestroyTexture(scoreText);
-        scoreText = NULL;
+        scoreText = nullptr;
     }
     TTF_Font *font = TTF_OpenFont("resources/DejaVuSans.ttf", 36);
-    if (font == NULL) {
+    if (font == nullptr) {
         fprintf(stderr, "Failed to load font: %s\n", TTF_GetError());
         return false;
     }
@@ -98,7 +98,7 @@ bool updateScoreTexture(GameState *state, SDL_Renderer *renderer) {
     scoreText = SDL_CreateTextureFromSurface(renderer, surface);
     SDL_FreeSurface(surface);
     TTF_CloseFont(font);
-    if (scoreText == NULL) {
+    if (scoreText == nullptr) {
         fprintf(stderr, "Failed to create score texture: %s\n", SDL_GetError());
         return false;
     }
@@ -106,12 +106,12 @@ bool updateScoreTexture(GameState *state, SDL_Renderer *renderer) {
 }
 
 bool updateLivesTexture(GameState *state, SDL_Renderer *renderer) {
-    if (livesText != NULL) {
+    if (livesText != nullptr) {
         SDL_DestroyTexture(livesText);
-        livesText = NULL;
+        livesText = nullptr;
     }
     TTF_Font *font = TTF_OpenFont("resources/DejaVuSans.ttf", 24);
-    if (font == NULL) {
+    if (font == nullptr) {
         fprintf(stderr, "Failed to load font: %s\n", TTF_GetError());
         return false;
     }
@@ -122,7 +122,7 @@ bool updateLivesTexture(GameState *state, SDL_Renderer *renderer) {
     livesText = SDL_CreateTextureFromSurface(renderer, surface);
     SDL_FreeSurface(surface);
     TTF_CloseFont(font);
-    if (livesText == NULL) {
+    if (livesText == nullptr) {
         fprintf(stderr, "Failed to create lives texture: %s\n", SDL_GetError());
         return false;
     }
@@ -130,33 +130,33 @@ bool updateLivesTexture(GameState *state, SDL_Renderer *renderer) {
 }
 
 bool freeTextures() {
-    if (title != NULL) {
+    if (title != nullptr) {
         SDL_DestroyTexture(title);
-        title = NULL;
+        title = nullptr;
     }
-    if (gameOver != NULL) {
+    if (gameOver != nullptr) {
         SDL_DestroyTexture(gameOver);
-        gameOver = NULL;
+        gameOver = nullptr;
     }
-    if (snakeSquare != NULL) {
+    if (snakeSquare != nullptr) {
         SDL_DestroyTexture(snakeSquare);
-        snakeSquare = NULL;
+        snakeSquare = nullptr;
     }
-    if (scoreText != NULL) {
+    if (scoreText != nullptr) {
         SDL_DestroyTexture(scoreText);
-        scoreText = NULL;
+        scoreText = nullptr;
     }
-    if (wall != NULL) {
+    if (wall != nullptr) {
         SDL_DestroyTexture(wall);
-        wall = NULL;
+        wall = nullptr;
     }
-    if (apple != NULL) {
+    if (apple != nullptr) {
         SDL_DestroyTexture(apple);
-        apple = NULL;
+        apple = nullptr;
     }
-    if (livesText != NULL) {
+    if (livesText != nullptr) {
         SDL_DestroyTexture(livesText);
-        livesText = NULL;
+        livesText = nullptr;
     }
     return true;
 }

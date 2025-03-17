@@ -17,7 +17,7 @@ bool initSdl(SDL_Window **window, SDL_Renderer **screenRenderer) {
     *window =
         SDL_CreateWindow("Snakes!", SDL_WINDOWPOS_UNDEFINED,
                          SDL_WINDOWPOS_UNDEFINED, 600, 600, SDL_WINDOW_SHOWN);
-    if (*window == NULL) {
+    if (*window == nullptr) {
         fprintf(stderr, "Could not create window: %s\n", SDL_GetError());
         return false;
     }

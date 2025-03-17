@@ -6,7 +6,7 @@
 Scene sceneTitleScreen(GameState *state, SDL_Window *window,
                     SDL_Renderer *renderer, SDL_Event *event) {
     SDL_RenderClear(renderer);
-    SDL_RenderCopy(renderer, title, NULL, NULL);
+    SDL_RenderCopy(renderer, title, nullptr, nullptr);
 
     SDL_Event e;
     while (SDL_PollEvent(&e) != 0) {
@@ -14,7 +14,7 @@ Scene sceneTitleScreen(GameState *state, SDL_Window *window,
             switch (e.key.keysym.sym) {
             case SDLK_ESCAPE:
             case SDLK_q:
-                Scene retQuit = {true, NULL};
+                Scene retQuit = {true, nullptr};
                 return retQuit;
             case SDLK_RETURN:
                 *state = getInitialGameState();
