@@ -21,4 +21,3 @@ bool initSdl(SDL_Window **window, SDL_Renderer **screenRenderer);
 void sdlClose(SDL_Window **window, SDL_Renderer **screenRenderer);
 
 #endif
-

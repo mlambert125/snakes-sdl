@@ -10,19 +10,21 @@ bool initSdl(SDL_Window **window, SDL_Renderer **screenRenderer) {
         return false;
     }
     if (TTF_Init() == -1) {
-        fprintf(stderr, "SDL_ttf could not initialize! SDL_ttf Error: %s\n",
-                TTF_GetError());
+        fprintf(stderr, "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError());
         return false;
     }
-    *window =
-        SDL_CreateWindow("Snakes!", SDL_WINDOWPOS_UNDEFINED,
-                         SDL_WINDOWPOS_UNDEFINED, 600, 600, SDL_WINDOW_SHOWN);
+    *window = SDL_CreateWindow("Snakes!", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 600, 600, SDL_WINDOW_SHOWN);
     if (*window == nullptr) {
         fprintf(stderr, "Could not create window: %s\n", SDL_GetError());
         return false;
     }
 
     *screenRenderer = SDL_CreateRenderer(*window, -1, SDL_RENDERER_ACCELERATED);
+
+    if (*screenRenderer == nullptr) {
+        fprintf(stderr, "Could not create renderer: %s\n", SDL_GetError());
+        return false;
+    }
     return true;
 }
 

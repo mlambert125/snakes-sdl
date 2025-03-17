@@ -7,4 +7,5 @@ BreakBeforeBinaryOperators: false
 IndentWidth: 4
 SortIncludes: false
 NamespaceIndentation: All
+ColumnLimit: 120
 ...

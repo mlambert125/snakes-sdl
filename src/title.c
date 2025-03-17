@@ -3,8 +3,7 @@
 #include "../includes/scenes.h"
 #include "../includes/textures.h"
 
-Scene sceneTitleScreen(GameState *state, SDL_Window *window,
-                    SDL_Renderer *renderer, SDL_Event *event) {
+Scene sceneTitleScreen(GameState *state, SDL_Window *window, SDL_Renderer *renderer, SDL_Event *event) {
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, title, nullptr, nullptr);
 

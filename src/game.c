@@ -5,31 +5,26 @@
 
 inline void resetAppleLocation(GameState *state);
 
-Scene sceneGame(GameState *state, SDL_Window *window, SDL_Renderer *renderer,
-                SDL_Event *event) {
+Scene sceneGame(GameState *state, SDL_Window *window, SDL_Renderer *renderer, SDL_Event *event) {
     SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, SDL_ALPHA_OPAQUE);
     SDL_RenderClear(renderer);
 
     for (int i = 0; i < MAX_X; i++) {
         SDL_RenderCopy(renderer, wall, nullptr, &(SDL_Rect){i * 20, 0, 20, 20});
-        SDL_RenderCopy(renderer, wall, nullptr,
-                       &(SDL_Rect){i * 20, (MAX_Y - 1) * 20, 20, 20});
+        SDL_RenderCopy(renderer, wall, nullptr, &(SDL_Rect){i * 20, (MAX_Y - 1) * 20, 20, 20});
     }
     for (int i = 0; i < MAX_Y; i++) {
         SDL_RenderCopy(renderer, wall, nullptr, &(SDL_Rect){0, i * 20, 20, 20});
-        SDL_RenderCopy(renderer, wall, nullptr,
-                       &(SDL_Rect){(MAX_X - 1) * 20, i * 20, 20, 20});
+        SDL_RenderCopy(renderer, wall, nullptr, &(SDL_Rect){(MAX_X - 1) * 20, i * 20, 20, 20});
     }
 
     for (int i = 0; i < state->snakeLength; i++) {
         SDL_RenderCopy(renderer, snakeSquare, nullptr,
                        &(SDL_Rect){state->snakeBodySegmentLocations[i].x * 20,
-                                   state->snakeBodySegmentLocations[i].y * 20,
-                                   20, 20});
+                                   state->snakeBodySegmentLocations[i].y * 20, 20, 20});
     }
     SDL_RenderCopy(renderer, apple, nullptr,
-                   &(SDL_Rect){state->appleLocation.x * 20,
-                               state->appleLocation.y * 20, 20, 20});
+                   &(SDL_Rect){state->appleLocation.x * 20, state->appleLocation.y * 20, 20, 20});
 
     SDL_RenderCopy(renderer, scoreText, nullptr, &(SDL_Rect){150, 0, 100, 30});
     SDL_RenderCopy(renderer, livesText, nullptr, &(SDL_Rect){300, 0, 100, 30});
@@ -43,13 +38,11 @@ Scene sceneGame(GameState *state, SDL_Window *window, SDL_Renderer *renderer,
                 return (Scene){true, nullptr};
             case SDLK_LEFT:
             case SDLK_a:
-                if (state->snakeDirection != RIGHT)
-                    state->snakeDirection = LEFT;
+                if (state->snakeDirection != RIGHT) state->snakeDirection = LEFT;
                 break;
             case SDLK_RIGHT:
             case SDLK_d:
-                if (state->snakeDirection != LEFT)
-                    state->snakeDirection = RIGHT;
+                if (state->snakeDirection != LEFT) state->snakeDirection = RIGHT;
                 break;
             case SDLK_UP:
             case SDLK_w:
@@ -64,8 +57,7 @@ Scene sceneGame(GameState *state, SDL_Window *window, SDL_Renderer *renderer,
     }
 
     for (int i = state->snakeLength - 1; i > 0; i--) {
-        state->snakeBodySegmentLocations[i] =
-            state->snakeBodySegmentLocations[i - 1];
+        state->snakeBodySegmentLocations[i] = state->snakeBodySegmentLocations[i - 1];
     }
 
     switch (state->snakeDirection) {
@@ -97,10 +89,8 @@ Scene sceneGame(GameState *state, SDL_Window *window, SDL_Renderer *renderer,
         updateScoreTexture(state, renderer);
     }
 
-    if (state->snakeBodySegmentLocations[0].x < 1 ||
-        state->snakeBodySegmentLocations[0].x >= MAX_X - 1 ||
-        state->snakeBodySegmentLocations[0].y < 1 ||
-        state->snakeBodySegmentLocations[0].y >= MAX_Y - 1) {
+    if (state->snakeBodySegmentLocations[0].x < 1 || state->snakeBodySegmentLocations[0].x >= MAX_X - 1 ||
+        state->snakeBodySegmentLocations[0].y < 1 || state->snakeBodySegmentLocations[0].y >= MAX_Y - 1) {
         state->lives -= 1;
         updateLivesTexture(state, renderer);
         state->snakeLength = 1;

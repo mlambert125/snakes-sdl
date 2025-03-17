@@ -6,42 +6,42 @@
 /**
  * The texture for the title screen.
  */
-extern SDL_Texture* title;
+extern SDL_Texture *title;
 
 /**
  * The texture for the game over screen.
  */
-extern SDL_Texture* gameOver;
+extern SDL_Texture *gameOver;
 
 /**
  * The texture for the apple.
  */
-extern SDL_Texture* apple;
+extern SDL_Texture *apple;
 
 /**
  * The texture for the snake square.
  */
-extern SDL_Texture* snakeSquare;
+extern SDL_Texture *snakeSquare;
 
 /**
  * The texture for the wall.
  */
-extern SDL_Texture* wall;
+extern SDL_Texture *wall;
 
 /**
  * The texture for the score text.
  */
-extern SDL_Texture* scoreText;
+extern SDL_Texture *scoreText;
 
 /**
  * The texture for the lives text.
  */
-extern SDL_Texture* livesText;
+extern SDL_Texture *livesText;
 
 /**
  * The texture for the game over text.
  */
-bool loadTextures(SDL_Renderer* renderer);
+bool loadTextures(SDL_Renderer *renderer);
 
 /**
  * Updates the score texture.

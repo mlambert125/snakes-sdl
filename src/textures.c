@@ -3,13 +3,13 @@
 #include "../includes/textures.h"
 #include "../includes/state.h"
 
-SDL_Texture* title = nullptr;
-SDL_Texture* gameOver = nullptr;
-SDL_Texture* snakeSquare = nullptr;
-SDL_Texture* scoreText = nullptr;
-SDL_Texture* livesText = nullptr;
-SDL_Texture* wall = nullptr;
-SDL_Texture* apple = nullptr;
+SDL_Texture *title = nullptr;
+SDL_Texture *gameOver = nullptr;
+SDL_Texture *snakeSquare = nullptr;
+SDL_Texture *scoreText = nullptr;
+SDL_Texture *livesText = nullptr;
+SDL_Texture *wall = nullptr;
+SDL_Texture *apple = nullptr;
 
 bool loadTextures(SDL_Renderer *renderer) {
     if (title == nullptr) {
@@ -160,4 +160,3 @@ bool freeTextures() {
     }
     return true;
 }
-

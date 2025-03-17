@@ -17,12 +17,7 @@ typedef struct {
 /**
  * Represents the direction of the snake.
  */
-typedef enum {
-    UP,
-    DOWN,
-    LEFT,
-    RIGHT
-} Direction;
+typedef enum { UP, DOWN, LEFT, RIGHT } Direction;
 
 /**
  * Represents the state of the game.
@@ -62,7 +57,7 @@ typedef struct {
      * The locations of the snake's body segments.
      */
     Location snakeBodySegmentLocations[MAX_SNAKE_LENGTH];
-    
+
     /**
      * The location of the apple.
      */
