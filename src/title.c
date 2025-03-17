@@ -4,10 +4,11 @@
 #include "../includes/textures.h"
 
 Scene sceneTitleScreen(GameState *state, SDL_Window *window, SDL_Renderer *renderer, SDL_Event *event) {
+    SDL_Event e;
+
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, title, nullptr, nullptr);
 
-    SDL_Event e;
     while (SDL_PollEvent(&e) != 0) {
         if (e.type == SDL_KEYDOWN) {
             switch (e.key.keysym.sym) {
@@ -15,6 +16,7 @@ Scene sceneTitleScreen(GameState *state, SDL_Window *window, SDL_Renderer *rende
             case SDLK_q:
                 Scene retQuit = {true, nullptr};
                 return retQuit;
+
             case SDLK_RETURN:
                 *state = getInitialGameState();
                 updateScoreTexture(state, renderer);
@@ -25,6 +27,5 @@ Scene sceneTitleScreen(GameState *state, SDL_Window *window, SDL_Renderer *rende
         }
     }
 
-    Scene retMenu = {false, sceneTitleScreen};
-    return retMenu;
+    return (Scene){false, sceneTitleScreen};
 }

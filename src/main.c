@@ -13,6 +13,8 @@ int main() {
     SDL_Window *window = nullptr;
     SDL_Renderer *renderer = nullptr;
     Scene currentScene = {false, sceneTitleScreen};
+    SDL_Event e;
+    bool quit = false;
 
     if (!initSdl(&window, &renderer)) {
         fprintf(stderr, "Failed to initialize\n");
@@ -23,8 +25,6 @@ int main() {
         return 1;
     }
 
-    SDL_Event e;
-    bool quit = false;
     while (!quit) {
         currentScene = currentScene.scene_fn(&gameState, window, renderer, &e);
         if (currentScene.quit) {
@@ -37,6 +37,7 @@ int main() {
     if (!freeTextures()) {
         fprintf(stderr, "Failed to free textures\n");
     }
+
     sdlClose(&window, &renderer);
     return 0;
 }

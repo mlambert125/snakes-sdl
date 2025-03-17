@@ -36,18 +36,22 @@ Scene sceneGame(GameState *state, SDL_Window *window, SDL_Renderer *renderer, SD
             case SDLK_ESCAPE:
             case SDLK_q:
                 return (Scene){true, nullptr};
+
             case SDLK_LEFT:
             case SDLK_a:
                 if (state->snakeDirection != RIGHT) state->snakeDirection = LEFT;
                 break;
+
             case SDLK_RIGHT:
             case SDLK_d:
                 if (state->snakeDirection != LEFT) state->snakeDirection = RIGHT;
                 break;
+
             case SDLK_UP:
             case SDLK_w:
                 if (state->snakeDirection != DOWN) state->snakeDirection = UP;
                 break;
+
             case SDLK_DOWN:
             case SDLK_s:
                 if (state->snakeDirection != UP) state->snakeDirection = DOWN;
@@ -64,12 +68,15 @@ Scene sceneGame(GameState *state, SDL_Window *window, SDL_Renderer *renderer, SD
     case LEFT:
         state->snakeBodySegmentLocations[0].x -= 1;
         break;
+
     case RIGHT:
         state->snakeBodySegmentLocations[0].x += 1;
         break;
+
     case UP:
         state->snakeBodySegmentLocations[0].y -= 1;
         break;
+
     case DOWN:
         state->snakeBodySegmentLocations[0].y += 1;
         break;
