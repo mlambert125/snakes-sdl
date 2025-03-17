@@ -13,6 +13,7 @@ Scene sceneGame(GameState *state, SDL_Window *window, SDL_Renderer *renderer, SD
         SDL_RenderCopy(renderer, wall, nullptr, &(SDL_Rect){i * 20, 0, 20, 20});
         SDL_RenderCopy(renderer, wall, nullptr, &(SDL_Rect){i * 20, (MAX_Y - 1) * 20, 20, 20});
     }
+
     for (int i = 0; i < MAX_Y; i++) {
         SDL_RenderCopy(renderer, wall, nullptr, &(SDL_Rect){0, i * 20, 20, 20});
         SDL_RenderCopy(renderer, wall, nullptr, &(SDL_Rect){(MAX_X - 1) * 20, i * 20, 20, 20});
