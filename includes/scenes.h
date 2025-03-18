@@ -21,7 +21,7 @@ struct Scene_Struct {
     /**
      * A function pointer to the next scene
      */
-    Scene (*scene_fn)(GameState *state, SDL_Window *window, SDL_Renderer *renderer);
+    Scene (*scene_fn)(GameState *state, SDL_Renderer *renderer);
 };
 
 /**
@@ -32,7 +32,7 @@ struct Scene_Struct {
  * @param renderer The SDL renderer
  * @param e The SDL event
  */
-Scene sceneTitleScreen(GameState *state, SDL_Window *window, SDL_Renderer *renderer);
+Scene sceneTitleScreen(GameState *state, SDL_Renderer *renderer);
 
 /**
  * The main game scene
@@ -42,7 +42,7 @@ Scene sceneTitleScreen(GameState *state, SDL_Window *window, SDL_Renderer *rende
  * @param renderer The SDL renderer
  * @param e The SDL event
  */
-Scene sceneGame(GameState *state, SDL_Window *window, SDL_Renderer *renderer);
+Scene sceneGame(GameState *state, SDL_Renderer *renderer);
 
 /**
  * The game over scene
@@ -52,6 +52,6 @@ Scene sceneGame(GameState *state, SDL_Window *window, SDL_Renderer *renderer);
  * @param renderer The SDL renderer
  * @param e The SDL event
  */
-Scene sceneGameOver(GameState *state, SDL_Window *window, SDL_Renderer *renderer);
+Scene sceneGameOver(GameState *state, SDL_Renderer *renderer);
 
 #endif

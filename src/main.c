@@ -24,7 +24,7 @@ int main() {
     }
 
     while (!currentScene.quit) {
-        currentScene = currentScene.scene_fn(&gameState, window, renderer);
+        currentScene = currentScene.scene_fn(&gameState, renderer);
         SDL_RenderPresent(renderer);
         SDL_Delay(1000 / FPS);
     }

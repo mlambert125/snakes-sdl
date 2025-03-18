@@ -46,49 +46,49 @@ build cmake_object_order_depends_target_snakes: phony || CMakeFiles/snakes.dir
 
 build CMakeFiles/snakes.dir/src/main.c.o: C_COMPILER__snakes_unscanned_ /home/mikel/projects/sdl/src/main.c || cmake_object_order_depends_target_snakes
   DEP_FILE = CMakeFiles/snakes.dir/src/main.c.o.d
-  FLAGS = --std=c2x
+  FLAGS = --std=c2x -Wall -Wextra -Wpedantic -Werror
   INCLUDES = -isystem /usr/include/SDL2
   OBJECT_DIR = CMakeFiles/snakes.dir
   OBJECT_FILE_DIR = CMakeFiles/snakes.dir/src
 
 build CMakeFiles/snakes.dir/src/game.c.o: C_COMPILER__snakes_unscanned_ /home/mikel/projects/sdl/src/game.c || cmake_object_order_depends_target_snakes
   DEP_FILE = CMakeFiles/snakes.dir/src/game.c.o.d
-  FLAGS = --std=c2x
+  FLAGS = --std=c2x -Wall -Wextra -Wpedantic -Werror
   INCLUDES = -isystem /usr/include/SDL2
   OBJECT_DIR = CMakeFiles/snakes.dir
   OBJECT_FILE_DIR = CMakeFiles/snakes.dir/src
 
 build CMakeFiles/snakes.dir/src/gameover.c.o: C_COMPILER__snakes_unscanned_ /home/mikel/projects/sdl/src/gameover.c || cmake_object_order_depends_target_snakes
   DEP_FILE = CMakeFiles/snakes.dir/src/gameover.c.o.d
-  FLAGS = --std=c2x
+  FLAGS = --std=c2x -Wall -Wextra -Wpedantic -Werror
   INCLUDES = -isystem /usr/include/SDL2
   OBJECT_DIR = CMakeFiles/snakes.dir
   OBJECT_FILE_DIR = CMakeFiles/snakes.dir/src
 
 build CMakeFiles/snakes.dir/src/init.c.o: C_COMPILER__snakes_unscanned_ /home/mikel/projects/sdl/src/init.c || cmake_object_order_depends_target_snakes
   DEP_FILE = CMakeFiles/snakes.dir/src/init.c.o.d
-  FLAGS = --std=c2x
+  FLAGS = --std=c2x -Wall -Wextra -Wpedantic -Werror
   INCLUDES = -isystem /usr/include/SDL2
   OBJECT_DIR = CMakeFiles/snakes.dir
   OBJECT_FILE_DIR = CMakeFiles/snakes.dir/src
 
 build CMakeFiles/snakes.dir/src/state.c.o: C_COMPILER__snakes_unscanned_ /home/mikel/projects/sdl/src/state.c || cmake_object_order_depends_target_snakes
   DEP_FILE = CMakeFiles/snakes.dir/src/state.c.o.d
-  FLAGS = --std=c2x
+  FLAGS = --std=c2x -Wall -Wextra -Wpedantic -Werror
   INCLUDES = -isystem /usr/include/SDL2
   OBJECT_DIR = CMakeFiles/snakes.dir
   OBJECT_FILE_DIR = CMakeFiles/snakes.dir/src
 
 build CMakeFiles/snakes.dir/src/textures.c.o: C_COMPILER__snakes_unscanned_ /home/mikel/projects/sdl/src/textures.c || cmake_object_order_depends_target_snakes
   DEP_FILE = CMakeFiles/snakes.dir/src/textures.c.o.d
-  FLAGS = --std=c2x
+  FLAGS = --std=c2x -Wall -Wextra -Wpedantic -Werror
   INCLUDES = -isystem /usr/include/SDL2
   OBJECT_DIR = CMakeFiles/snakes.dir
   OBJECT_FILE_DIR = CMakeFiles/snakes.dir/src
 
 build CMakeFiles/snakes.dir/src/title.c.o: C_COMPILER__snakes_unscanned_ /home/mikel/projects/sdl/src/title.c || cmake_object_order_depends_target_snakes
   DEP_FILE = CMakeFiles/snakes.dir/src/title.c.o.d
-  FLAGS = --std=c2x
+  FLAGS = --std=c2x -Wall -Wextra -Wpedantic -Werror
   INCLUDES = -isystem /usr/include/SDL2
   OBJECT_DIR = CMakeFiles/snakes.dir
   OBJECT_FILE_DIR = CMakeFiles/snakes.dir/src
@@ -102,7 +102,7 @@ build CMakeFiles/snakes.dir/src/title.c.o: C_COMPILER__snakes_unscanned_ /home/m
 # Link the executable bin/snakes
 
 build bin/snakes: C_EXECUTABLE_LINKER__snakes_ CMakeFiles/snakes.dir/src/main.c.o CMakeFiles/snakes.dir/src/game.c.o CMakeFiles/snakes.dir/src/gameover.c.o CMakeFiles/snakes.dir/src/init.c.o CMakeFiles/snakes.dir/src/state.c.o CMakeFiles/snakes.dir/src/textures.c.o CMakeFiles/snakes.dir/src/title.c.o | /usr/lib/x86_64-linux-gnu/libSDL2.so
-  FLAGS = --std=c2x
+  FLAGS = --std=c2x -Wall -Wextra -Wpedantic -Werror
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libSDL2.so  -lSDL2_ttf
   OBJECT_DIR = CMakeFiles/snakes.dir
   POST_BUILD = :

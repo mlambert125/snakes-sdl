@@ -2,7 +2,7 @@
 #include "../includes/scenes.h"
 #include "../includes/textures.h"
 
-Scene sceneGameOver(GameState *state, SDL_Window *window, SDL_Renderer *renderer) {
+Scene sceneGameOver(GameState *state, SDL_Renderer *renderer) {
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, gameOver, nullptr, nullptr);
 

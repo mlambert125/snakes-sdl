@@ -2,7 +2,6 @@
 #define STATE_H
 
 #define MAX_SNAKE_LENGTH 64
-#define INVALID_COORDINATE -1
 #define MAX_X 30
 #define MAX_Y 30
 
