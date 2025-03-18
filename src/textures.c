@@ -31,57 +31,39 @@ SDL_Texture *livesText = nullptr;
 SDL_Texture *wall = nullptr;
 SDL_Texture *apple = nullptr;
 
+SDL_Texture *loadTexture(const char *bmp, int size, SDL_Renderer *renderer);
+
 bool loadTextures(SDL_Renderer *renderer) {
+
+    title = loadTexture(titleBmp, sizeof(titleBmp), renderer);
     if (title == nullptr) {
-        SDL_Surface *surface = SDL_LoadBMP_RW(SDL_RWFromConstMem(titleBmp, sizeof(titleBmp)), 1);
-
-        if (surface == nullptr) {
-            fprintf(stderr, "Failed to load title texture: %s\n", SDL_GetError());
-            return false;
-        }
-        title = SDL_CreateTextureFromSurface(renderer, surface);
-        SDL_FreeSurface(surface);
+        fprintf(stderr, "Failed to load title texture\n");
+        return false;
     }
-
+    gameOver = loadTexture(gameOverBmp, sizeof(gameOverBmp), renderer);
     if (gameOver == nullptr) {
-        SDL_Surface *surface = SDL_LoadBMP_RW(SDL_RWFromConstMem(gameOverBmp, sizeof(gameOverBmp)), 1);
-
-        if (surface == nullptr) {
-            fprintf(stderr, "Failed to load game over texture: %s\n", SDL_GetError());
-            return false;
-        }
-        gameOver = SDL_CreateTextureFromSurface(renderer, surface);
-        SDL_FreeSurface(surface);
+        fprintf(stderr, "Failed to load game over texture\n");
+        return false;
+    }
+    wall = loadTexture(wallBmp, sizeof(wallBmp), renderer);
+    if (wall == nullptr) {
+        fprintf(stderr, "Failed to load wall texture\n");
+        return false;
+    }
+    apple = loadTexture(appleBmp, sizeof(appleBmp), renderer);
+    if (apple == nullptr) {
+        fprintf(stderr, "Failed to load apple texture\n");
+        return false;
     }
 
-    if (snakeSquare == nullptr) {
+    {
         SDL_Surface *surface = SDL_CreateRGBSurface(0, 20, 20, 32, 0, 0, 0, 0);
         SDL_FillRect(surface, nullptr, SDL_MapRGB(surface->format, 0x00, 0xFF, 0x00));
         snakeSquare = SDL_CreateTextureFromSurface(renderer, surface);
         SDL_FreeSurface(surface);
     }
 
-    if (wall == nullptr) {
-        SDL_Surface *surface = SDL_LoadBMP_RW(SDL_RWFromConstMem(wallBmp, sizeof(wallBmp)), 1);
-        if (surface == nullptr) {
-            fprintf(stderr, "Failed to load wall texture: %s\n", SDL_GetError());
-            return false;
-        }
-        wall = SDL_CreateTextureFromSurface(renderer, surface);
-        SDL_FreeSurface(surface);
-    }
-
-    if (apple == nullptr) {
-        SDL_Surface *surface = SDL_LoadBMP_RW(SDL_RWFromConstMem(appleBmp, sizeof(appleBmp)), 1);
-        if (surface == nullptr) {
-            fprintf(stderr, "Failed to load apple texture: %s\n", SDL_GetError());
-            return false;
-        }
-        apple = SDL_CreateTextureFromSurface(renderer, surface);
-        SDL_FreeSurface(surface);
-    }
-
-    if (scoreText == nullptr) {
+    {
         TTF_Font *font = TTF_OpenFontRW(SDL_RWFromConstMem(DejaVuSansTtf, sizeof(DejaVuSansTtf)), 1, 36);
         if (font == nullptr) {
             fprintf(stderr, "Failed to load font: %s\n", TTF_GetError());
@@ -94,7 +76,7 @@ bool loadTextures(SDL_Renderer *renderer) {
         TTF_CloseFont(font);
     }
 
-    if (livesText == nullptr) {
+    {
         TTF_Font *font = TTF_OpenFontRW(SDL_RWFromConstMem(DejaVuSansTtf, sizeof(DejaVuSansTtf)), 1, 36);
         if (font == nullptr) {
             fprintf(stderr, "Failed to load font: %s\n", TTF_GetError());
@@ -106,6 +88,7 @@ bool loadTextures(SDL_Renderer *renderer) {
         SDL_FreeSurface(surface);
         TTF_CloseFont(font);
     }
+
     return true;
 }
 
@@ -198,4 +181,15 @@ bool freeTextures() {
         livesText = nullptr;
     }
     return true;
+}
+
+SDL_Texture *loadTexture(const char *bmp, int size, SDL_Renderer *renderer) {
+    SDL_Surface *surface = SDL_LoadBMP_RW(SDL_RWFromConstMem(bmp, size), 1);
+    if (surface == nullptr) {
+        fprintf(stderr, "Failed to load texture: %s\n", SDL_GetError());
+        return nullptr;
+    }
+    SDL_Texture *texture = SDL_CreateTextureFromSurface(renderer, surface);
+    SDL_FreeSurface(surface);
+    return texture;
 }
