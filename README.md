@@ -13,9 +13,13 @@ You need the following:
 
 - SDL2
 - SDL2_ttf
+- cmake
 - clang 19.0 or later
 - ninja
-- cmake
+
+> [!NOTE]
+> For the last two items, you can use any compiler and build system you want, and adjust the call to `cmake`
+> accordingly, but I used clang 19.0 and ninja to build this project, so I recommend using those.
 
 On Arch Linux, you can install these dependencies using the following command:
 
@@ -32,7 +36,7 @@ sudo apt-get install libsdl2-dev libsdl2-ttf-dev clang-19 cmake ninja-build
 Once you have the dependencies installed, you can build the game using the following commands:
 
 ```bash
-cmake .
+cmake -G Ninja .
 ninja
 ```
 
