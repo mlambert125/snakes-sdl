@@ -5,7 +5,7 @@
 
 inline void resetAppleLocation(GameState *state);
 
-Scene sceneGame(GameState *state, SDL_Window *window, SDL_Renderer *renderer, SDL_Event *event) {
+Scene sceneGame(GameState *state, SDL_Window *window, SDL_Renderer *renderer) {
     SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, SDL_ALPHA_OPAQUE);
     SDL_RenderClear(renderer);
 

@@ -3,12 +3,11 @@
 #include "../includes/scenes.h"
 #include "../includes/textures.h"
 
-Scene sceneTitleScreen(GameState *state, SDL_Window *window, SDL_Renderer *renderer, SDL_Event *event) {
-    SDL_Event e;
-
+Scene sceneTitleScreen(GameState *state, SDL_Window *window, SDL_Renderer *renderer) {
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, title, nullptr, nullptr);
 
+    SDL_Event e;
     while (SDL_PollEvent(&e) != 0) {
         if (e.type == SDL_KEYDOWN) {
             switch (e.key.keysym.sym) {
