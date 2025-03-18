@@ -1,9 +1,12 @@
 # ninja log v6
 3	24	1742302986257004322	CMakeFiles/snakes.dir/src/state.c.o	2e36c61d3193004
-1	148	1742303071697427662	CMakeFiles/snakes.dir/src/main.c.o	1f0f789e9ba7229
+1	136	1742303400872323009	CMakeFiles/snakes.dir/src/main.c.o	1f0f789e9ba7229
 2	254	1742302986257004322	CMakeFiles/snakes.dir/src/game.c.o	d0b41c4f60e6fad1
 3	283	1742302986260337664	CMakeFiles/snakes.dir/src/textures.c.o	64017ae26e179c62
 2	302	1742302986257004322	CMakeFiles/snakes.dir/src/gameover.c.o	6a136a86a2d4d21f
 3	346	1742302986260337664	CMakeFiles/snakes.dir/src/title.c.o	e0c344957edecd3b
 3	317	1742302986257004322	CMakeFiles/snakes.dir/src/init.c.o	f219bbeeb07680d7
-148	185	1742303071844095325	bin/snakes	e40e94abd4da0a70
+136	167	1742303401008987539	bin/snakes	e40e94abd4da0a70
+2	149	1742303659607055954	CMakeFiles/snakes.dir/src/main.c.o	1f0f789e9ba7229
+2	150	1742303659607055954	CMakeFiles/snakes.dir/src/game.c.o	d0b41c4f60e6fad1
+150	184	1742303659753722378	bin/snakes	e40e94abd4da0a70

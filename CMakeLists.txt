@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 project(snakes)
-set(CMAKE_C_FLAGS "--std=c2x -Wall -Wextra -Wpedantic -Werror")
 set(CMAKE_C_COMPILER "/usr/bin/clang")
+set(CMAKE_C_FLAGS "--std=c2x -Wall -Wextra -Wpedantic -Werror")
 
 set(SourceFiles
     src/main.c

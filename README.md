@@ -18,8 +18,8 @@ You need the following:
 - ninja
 
 > [!NOTE]
-> For the last two items, you can use any compiler and build system you want, and adjust the call to `cmake`
-> accordingly, but I used clang 19.0 and ninja to build this project, so I recommend using those.
+> For the last two items, you can use any compiler and build system you want, and adjust the call to `cmake` and the
+> `CMakeLists.txt` file accordingly, but I used clang 19.0 and ninja to build this project, so I recommend using those.
 
 On Arch Linux, you can install these dependencies using the following command:
 
