@@ -14,15 +14,13 @@ Scene sceneTitleScreen(GameState *state, SDL_Window *window, SDL_Renderer *rende
             switch (e.key.keysym.sym) {
             case SDLK_ESCAPE:
             case SDLK_q:
-                Scene retQuit = {true, nullptr};
-                return retQuit;
+                return (Scene){true, nullptr};
 
             case SDLK_RETURN:
                 *state = getInitialGameState();
                 updateScoreTexture(state, renderer);
                 updateLivesTexture(state, renderer);
-                Scene retGame = {false, sceneGame};
-                return retGame;
+                return (Scene){false, sceneGame};
             }
         }
     }
