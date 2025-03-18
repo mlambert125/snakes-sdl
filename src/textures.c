@@ -3,6 +3,26 @@
 #include "../includes/textures.h"
 #include "../includes/state.h"
 
+static const char titleBmp[] = {
+#embed "../resources/title.bmp"
+};
+
+static const char gameOverBmp[] = {
+#embed "../resources/gameover.bmp"
+};
+
+static const char wallBmp[] = {
+#embed "../resources/wall.bmp"
+};
+
+static const char appleBmp[] = {
+#embed "../resources/apple.bmp"
+};
+
+static const char DejaVuSansTtf[] = {
+#embed "../resources/DejaVuSans.ttf"
+};
+
 SDL_Texture *title = nullptr;
 SDL_Texture *gameOver = nullptr;
 SDL_Texture *snakeSquare = nullptr;
@@ -13,7 +33,8 @@ SDL_Texture *apple = nullptr;
 
 bool loadTextures(SDL_Renderer *renderer) {
     if (title == nullptr) {
-        SDL_Surface *surface = SDL_LoadBMP("resources/title.bmp");
+        SDL_Surface *surface = SDL_LoadBMP_RW(SDL_RWFromConstMem(titleBmp, sizeof(titleBmp)), 1);
+
         if (surface == nullptr) {
             fprintf(stderr, "Failed to load title texture: %s\n", SDL_GetError());
             return false;
@@ -23,7 +44,8 @@ bool loadTextures(SDL_Renderer *renderer) {
     }
 
     if (gameOver == nullptr) {
-        SDL_Surface *surface = SDL_LoadBMP("resources/gameover.bmp");
+        SDL_Surface *surface = SDL_LoadBMP_RW(SDL_RWFromConstMem(gameOverBmp, sizeof(gameOverBmp)), 1);
+
         if (surface == nullptr) {
             fprintf(stderr, "Failed to load game over texture: %s\n", SDL_GetError());
             return false;
@@ -40,7 +62,7 @@ bool loadTextures(SDL_Renderer *renderer) {
     }
 
     if (wall == nullptr) {
-        SDL_Surface *surface = SDL_LoadBMP("resources/wall.bmp");
+        SDL_Surface *surface = SDL_LoadBMP_RW(SDL_RWFromConstMem(wallBmp, sizeof(wallBmp)), 1);
         if (surface == nullptr) {
             fprintf(stderr, "Failed to load wall texture: %s\n", SDL_GetError());
             return false;
@@ -50,7 +72,7 @@ bool loadTextures(SDL_Renderer *renderer) {
     }
 
     if (apple == nullptr) {
-        SDL_Surface *surface = SDL_LoadBMP("resources/apple.bmp");
+        SDL_Surface *surface = SDL_LoadBMP_RW(SDL_RWFromConstMem(appleBmp, sizeof(appleBmp)), 1);
         if (surface == nullptr) {
             fprintf(stderr, "Failed to load apple texture: %s\n", SDL_GetError());
             return false;
@@ -60,7 +82,7 @@ bool loadTextures(SDL_Renderer *renderer) {
     }
 
     if (scoreText == nullptr) {
-        TTF_Font *font = TTF_OpenFont("resources/DejaVuSans.ttf", 12);
+        TTF_Font *font = TTF_OpenFontRW(SDL_RWFromConstMem(DejaVuSansTtf, sizeof(DejaVuSansTtf)), 1, 36);
         if (font == nullptr) {
             fprintf(stderr, "Failed to load font: %s\n", TTF_GetError());
             return false;
@@ -73,7 +95,7 @@ bool loadTextures(SDL_Renderer *renderer) {
     }
 
     if (livesText == nullptr) {
-        TTF_Font *font = TTF_OpenFont("resources/DejaVuSans.ttf", 36);
+        TTF_Font *font = TTF_OpenFontRW(SDL_RWFromConstMem(DejaVuSansTtf, sizeof(DejaVuSansTtf)), 1, 36);
         if (font == nullptr) {
             fprintf(stderr, "Failed to load font: %s\n", TTF_GetError());
             return false;
@@ -175,6 +197,5 @@ bool freeTextures() {
         SDL_DestroyTexture(livesText);
         livesText = nullptr;
     }
-
     return true;
 }
