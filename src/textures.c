@@ -64,26 +64,26 @@ bool loadTextures(SDL_Renderer *renderer) {
     }
 
     {
-        TTF_Font *font = TTF_OpenFontRW(SDL_RWFromConstMem(DejaVuSansTtf, sizeof(DejaVuSansTtf)), 1, 36);
+        TTF_Font *font = TTF_OpenFontRW(SDL_RWFromConstMem(DejaVuSansTtf, sizeof(DejaVuSansTtf)), 1, 48);
         if (font == nullptr) {
             fprintf(stderr, "Failed to load font: %s\n", TTF_GetError());
             return false;
         }
         SDL_Color color = (SDL_Color){255, 255, 255, 255};
-        SDL_Surface *surface = TTF_RenderText_Solid(font, "Score: 0", color);
+        SDL_Surface *surface = TTF_RenderText_Blended(font, "Score: 0", color);
         scoreText = SDL_CreateTextureFromSurface(renderer, surface);
         SDL_FreeSurface(surface);
         TTF_CloseFont(font);
     }
 
     {
-        TTF_Font *font = TTF_OpenFontRW(SDL_RWFromConstMem(DejaVuSansTtf, sizeof(DejaVuSansTtf)), 1, 36);
+        TTF_Font *font = TTF_OpenFontRW(SDL_RWFromConstMem(DejaVuSansTtf, sizeof(DejaVuSansTtf)), 1, 48);
         if (font == nullptr) {
             fprintf(stderr, "Failed to load font: %s\n", TTF_GetError());
             return false;
         }
         SDL_Color color = (SDL_Color){255, 255, 255, 255};
-        SDL_Surface *surface = TTF_RenderText_Solid(font, "Lives: 3", color);
+        SDL_Surface *surface = TTF_RenderText_Blended(font, "Lives: 3", color);
         livesText = SDL_CreateTextureFromSurface(renderer, surface);
         SDL_FreeSurface(surface);
         TTF_CloseFont(font);
@@ -98,7 +98,7 @@ bool updateScoreTexture(GameState *state, SDL_Renderer *renderer) {
         scoreText = nullptr;
     }
 
-    TTF_Font *font = TTF_OpenFont("resources/DejaVuSans.ttf", 36);
+    TTF_Font *font = TTF_OpenFont("resources/DejaVuSans.ttf", 48);
     if (font == nullptr) {
         fprintf(stderr, "Failed to load font: %s\n", TTF_GetError());
         return false;
@@ -107,7 +107,7 @@ bool updateScoreTexture(GameState *state, SDL_Renderer *renderer) {
     char scoreTextBuffer[32];
     snprintf(scoreTextBuffer, sizeof(scoreTextBuffer), "Score: %d", state->score);
     SDL_Color color = (SDL_Color){255, 255, 255, 255};
-    SDL_Surface *surface = TTF_RenderText_Solid(font, scoreTextBuffer, color);
+    SDL_Surface *surface = TTF_RenderText_Blended(font, scoreTextBuffer, color);
     scoreText = SDL_CreateTextureFromSurface(renderer, surface);
     SDL_FreeSurface(surface);
     TTF_CloseFont(font);
@@ -124,7 +124,7 @@ bool updateLivesTexture(GameState *state, SDL_Renderer *renderer) {
         SDL_DestroyTexture(livesText);
         livesText = nullptr;
     }
-    TTF_Font *font = TTF_OpenFont("resources/DejaVuSans.ttf", 24);
+    TTF_Font *font = TTF_OpenFont("resources/DejaVuSans.ttf", 48);
     if (font == nullptr) {
         fprintf(stderr, "Failed to load font: %s\n", TTF_GetError());
         return false;
@@ -133,10 +133,11 @@ bool updateLivesTexture(GameState *state, SDL_Renderer *renderer) {
     char livesTextBuffer[32];
     snprintf(livesTextBuffer, sizeof(livesTextBuffer), "Lives: %d", state->lives);
     SDL_Color color = (SDL_Color){255, 255, 255, 255};
-    SDL_Surface *surface = TTF_RenderText_Solid(font, livesTextBuffer, color);
+    SDL_Surface *surface = TTF_RenderText_Blended(font, livesTextBuffer, color);
     livesText = SDL_CreateTextureFromSurface(renderer, surface);
     SDL_FreeSurface(surface);
     TTF_CloseFont(font);
+
 
     if (livesText == nullptr) {
         fprintf(stderr, "Failed to create lives texture: %s\n", SDL_GetError());
