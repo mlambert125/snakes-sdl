@@ -11,7 +11,7 @@ You need the following:
 
 - SDL2
 - SDL2_ttf
-- clang
+- clang 19.0 or later
 - ninja
 - cmake
 
@@ -24,7 +24,7 @@ sudo pacman -S sdl2 sdl2_ttf clang cmake ninja
 On Ubuntu, you can install these dependencies using the following command:
 
 ```bash
-sudo apt-get install libsdl2-dev libsdl2-ttf-dev clang cmake ninja-build
+sudo apt-get install libsdl2-dev libsdl2-ttf-dev clang-19 cmake ninja-build
 ```
 
 Once you have the dependencies installed, you can build the game using the following commands:
