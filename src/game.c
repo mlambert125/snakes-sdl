@@ -40,21 +40,25 @@ Scene sceneGame(GameState *state, SDL_Renderer *renderer) {
 
             case SDLK_LEFT:
             case SDLK_a:
+            case SDLK_h:
                 if (state->snakeDirection != RIGHT) state->snakeDirection = LEFT;
                 break;
 
             case SDLK_RIGHT:
             case SDLK_d:
+            case SDLK_l:
                 if (state->snakeDirection != LEFT) state->snakeDirection = RIGHT;
                 break;
 
             case SDLK_UP:
             case SDLK_w:
+            case SDLK_k:
                 if (state->snakeDirection != DOWN) state->snakeDirection = UP;
                 break;
 
             case SDLK_DOWN:
             case SDLK_s:
+            case SDLK_j:
                 if (state->snakeDirection != UP) state->snakeDirection = DOWN;
                 break;
             }

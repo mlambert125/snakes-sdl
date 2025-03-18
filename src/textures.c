@@ -138,7 +138,6 @@ bool updateLivesTexture(GameState *state, SDL_Renderer *renderer) {
     SDL_FreeSurface(surface);
     TTF_CloseFont(font);
 
-
     if (livesText == nullptr) {
         fprintf(stderr, "Failed to create lives texture: %s\n", SDL_GetError());
         return false;
